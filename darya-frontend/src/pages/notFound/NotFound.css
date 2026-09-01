@@ -1,0 +1,13 @@
+.not-found-page-container {
+    width: 100%;
+    height: 378px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+    p {
+        color: #8A6D1E;
+        font-size: 30px;
+    }
+}

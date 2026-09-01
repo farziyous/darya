@@ -15,7 +15,7 @@ export const Header = () => {
                     <Link to='/'><img src="/darya-logo.webp" alt="لوگو کفش دریا" /></Link>
                 </div>
                 <div className='navigation'>
-                    <NavLink to=''>محصولات</NavLink>
+                    <NavLink to='products'>محصولات</NavLink>
                     <NavLink to=''>ارتباط با ما</NavLink>
                     <NavLink to=''>وبلاگ</NavLink>
                 </div>

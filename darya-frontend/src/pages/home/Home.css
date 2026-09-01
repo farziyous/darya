@@ -1,4 +1,5 @@
 .home-container {
+    margin-top: 80px;
 
     .main-banner {
         position: relative;
@@ -16,9 +17,9 @@
             position: absolute;
             display: flex;
             width: 100%;
-            flex-wrap: wrap;
-            gap: 30px;
-            top: 60%;
+            flex-wrap: nowrap;
+            gap: clamp(10px, 3vw, 30px);
+            top: 55%;
             padding-right: 5%;
 
             a {
@@ -32,7 +33,11 @@
                 transition: 0.3s;
 
                 .category-img {
-                    width: 120px;
+                    width: clamp(65px, 12vw, 120px);
+                }
+
+                span {
+                    font-size: clamp(16px, 2.5vw, 23px);
                 }
 
                 &:hover {
@@ -42,8 +47,40 @@
         }
     }
 
+    .new-products-container {
+        margin-top: 60px;
+        margin-left: clamp(20px, 5%, 100px);
+        margin-right: clamp(20px, 5%, 100px);
+
+        h1 {
+            text-align: center;
+            color: #8A6D1E;
+            font-size: 50px;
+        }
+
+        .new-products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: clamp(10px, 3vw, 50px);
+            justify-content: center;
+            align-items: stretch;
+            margin-top: 20px;
+            margin-bottom: 60px;
+        }
+    }
+
     .swiper-container {
         margin: 0px 6%;
+    }
+
+    .product-swiper {
+        margin: 20px 3%;
+
+        h1 {
+            text-align: center;
+            color: #8A6D1E;
+            font-size: 50px;
+        }
     }
 
     @media (max-width: 1200px) {
@@ -52,8 +89,18 @@
         }
     }
 
+    @media (max-width: 1050px) {
+        .main-banner {
+
+            .categories {
+                top: 50%;
+            }
+        }
+    }
+
     @media (max-width: 800px) {
         .main-banner {
+            margin-top: 100px;
 
             .main-banner-img {
                 display: none;
@@ -65,16 +112,13 @@
 
             .categories {
                 justify-content: center;
-                top: 45%;
+                top: 55%;
                 padding-right: 0px;
-
-                a {
-
-                    .category-img {
-                        width: 100px;
-                    }
-                }
             }
+        }
+
+        .swiper-container {
+            margin: 0px;
         }
     }
 
@@ -82,15 +126,29 @@
         .main-banner {
             .categories {
                 justify-content: center;
+            }
+        }
+    }
 
-                a {
+    @media (max-width: 500px) {
+        .new-products-container {
 
-                    .category-img {
-                        width: 90px;
-                    }
-                }
+            h1 {
+                font-size: 40px;
             }
         }
 
+        .product-swiper {
+
+            h1 {
+                font-size: 40px;
+            }
+        }
+    }
+
+    @media (max-width: 400px) {
+        .swiper-container {
+            margin-top: 30px;
+        }
     }
 }

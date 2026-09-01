@@ -4,6 +4,15 @@
     align-items: center;
     padding: 10px 30px;
     border-bottom: 1px solid #8A6D1E;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    background-color: rgba(245, 239, 224, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .header-container-mobile {
@@ -13,6 +22,15 @@
     padding: 10px 30px;
     border-bottom: 1px solid #8A6D1E;
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    background-color: rgba(245, 239, 224, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     .right-side {
         display: flex;
@@ -117,7 +135,7 @@
 
     input {
         width: 300px;
-        padding: 12px;
+        padding: 7px;
         border: #8A6D1E 2px solid;
         border-radius: 10px;
         background-color: #f5efe0;
@@ -137,8 +155,8 @@
 
     .search-svg {
         width: 45px;
-
         position: absolute;
+        top: 2px;
     }
 }
 
@@ -162,11 +180,11 @@
 
             input {
                 width: 230px;
-                padding: 8px;
+                padding: 7px;
             }
 
             .search-svg {
-                top: -2px;
+                top: 2px;
             }
         }
 
