@@ -1,8 +1,67 @@
+import { useState } from 'react'
+import { useSearchParams } from 'react-router'
+import axios from 'axios'
 import { Header } from '../../components/header/Header'
 import { Footer } from '../../components/footer/Footer'
 import './ContactUs.css'
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+
 export const ContactUs = () => {
+    const [searchParams] = useSearchParams()
+    const aboutProduct = searchParams.get('about') || ''
+
+    const [name, setName] = useState('')
+    const [phone, setPhone] = useState('')
+    const [message, setMessage] = useState(
+        aboutProduct ? `ارسال پیام در مورد ${aboutProduct}:` : ''
+    )
+    const [status, setStatus] = useState('idle')
+    const [errorMsg, setErrorMsg] = useState('')
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        if (!name.trim() || !phone.trim() || !message.trim()) {
+            setStatus('error')
+            setErrorMsg('لطفا تمام فیلدها را پر کنید')
+            return
+        }
+        else if (name.trim().length < 2) {
+            setStatus('error')
+            setErrorMsg('نام نامعتبر است')
+            return
+        }
+        else if (phone.trim().length < 10 || !/^\d+$/.test(phone.trim())) {
+            setStatus('error')
+            setErrorMsg('تلفن نامعتبر است')
+            return
+        }
+
+        setStatus('sending')
+        setErrorMsg('')
+
+        try {
+            await axios.post(`${API_BASE}/contact/`, {
+                name,
+                phone,
+                message,
+            })
+
+            setStatus('success')
+            setName('')
+            setPhone('')
+            setMessage('')
+        } catch (err) {
+            setStatus('error')
+            setErrorMsg(
+                err.response?.data?.error ||
+                err.response?.data?.detail ||
+                'ارسال پیام با خطا مواجه شد'
+            )
+        }
+    }
+
     return (
         <>
             <title>ارتباط با ما</title>
@@ -10,22 +69,45 @@ export const ContactUs = () => {
             <Header />
             <div className='contact-container'>
                 <h1 className='contact-us-title'>ارتباط مستقیم با دریا</h1>
-                <form action="" className='contact-us-form'>
+                <form onSubmit={handleSubmit} className='contact-us-form'>
                     <div className='inputs'>
                         <div>
                             <label htmlFor="name">نام: </label>
-                            <input type="text" id='name' />
+                            <input
+                                type="text"
+                                id='name'
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
                         </div>
                         <div>
                             <label htmlFor="phone">شماره تماس: </label>
-                            <input type="tel" id='phone' />
+                            <input
+                                type="tel"
+                                id='phone'
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                            />
                         </div>
                     </div>
                     <div>
-                        <label htmlFor="text">پیام: </label>
-                        <textarea id="text"></textarea>
+                        <label htmlFor="message">پیام: </label>
+                        <textarea
+                            id="message"
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                        ></textarea>
                     </div>
-                    <button>ارسال</button>
+                    <button type="submit" disabled={status === 'sending'}>
+                        {status === 'sending' ? 'در حال ارسال...' : 'ارسال'}
+                    </button>
+
+                    {status === 'success' && (
+                        <p className='form-success'>پیام شما با موفقیت ارسال شد</p>
+                    )}
+                    {status === 'error' && (
+                        <p className='form-error'>{errorMsg}</p>
+                    )}
                 </form>
             </div>
             <div className="map-wrap">

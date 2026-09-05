@@ -30,19 +30,19 @@ export function SwiperCom({ categories }) {
                     className="mySwiper"
                 >
                     <SwiperSlide>
-                        <Link><img src={alfarsBanner} alt="الفارس دریا" /></Link>
+                        <Link to='/product?product=alfars'><img src={alfarsBanner} alt="الفارس دریا" /></Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link><img src={crocsBanner} alt="کراکس دریا" /></Link>
+                        <Link to='/product?product=crocs'><img src={crocsBanner} alt="کراکس دریا" /></Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link><img src={nikaBanner} alt="نیکا دریا" /></Link>
+                        <Link to='/product?product=nika'><img src={nikaBanner} alt="نیکا دریا" /></Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link><img src={mitraBanner} alt="میترا دریا" /></Link>
+                        <Link to='/product?product=mitra'><img src={mitraBanner} alt="میترا دریا" /></Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link><img src={sororBanner} alt="سرور دریا" /></Link>
+                        <Link to='/product?product=soror'><img src={sororBanner} alt="سرور دریا" /></Link>
                     </SwiperSlide>
                 </Swiper>
                 <Swiper
@@ -55,19 +55,19 @@ export function SwiperCom({ categories }) {
                     className="mySwiper-mobile"
                 >
                     <SwiperSlide>
-                        <Link><img src={alfarsBannerMobile} alt="الفارس دریا" /></Link>
+                        <Link to='/product?product=alfars'><img src={alfarsBannerMobile} alt="الفارس دریا" /></Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link><img src={crocsbannerMobile} alt="کراکس دریا" /></Link>
+                        <Link to='/product?product=crocs'><img src={crocsbannerMobile} alt="کراکس دریا" /></Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link><img src={nikaBannerMobile} alt="نیکا دریا" /></Link>
+                        <Link to='/product?product=nika'><img src={nikaBannerMobile} alt="نیکا دریا" /></Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link><img src={mitraBannerMobile} alt="میترا دریا" /></Link>
+                        <Link to='/product?product=mitra'><img src={mitraBannerMobile} alt="میترا دریا" /></Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link><img src={sororBannerMobile} alt="سرور دریا" /></Link>
+                        <Link to='/product?product=soror'><img src={sororBannerMobile} alt="سرور دریا" /></Link>
                     </SwiperSlide>
                 </Swiper>
             </>
@@ -101,10 +101,12 @@ export function SwiperCom({ categories }) {
                     categories.map((category) =>
                         category.featured_product ? (
                             <SwiperSlide key={category.id}><div className="product-slide">
-                                <Link to='' className='img-link'><img src={category.featured_product.default_image.path} alt={category.featured_product.title} /></Link> 
+                                <Link to={`/product?product=${category.featured_product.slug}`} className='img-link'>
+                                    <img src={category.featured_product.default_image.path} alt={category.featured_product.title} />
+                                </Link> 
                                 <div className='info'>
                                     <p>{category.featured_product.title}</p>
-                                    <Link to='' className='link'>نمایش</Link>
+                                    <Link to={`/product?product=${category.featured_product.slug}`} className='link'>نمایش</Link>
                                 </div>
                             </div></SwiperSlide>
                         ) : null

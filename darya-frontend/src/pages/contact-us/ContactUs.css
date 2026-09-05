@@ -87,6 +87,32 @@
             &:active {
                 transform: scale(0.97);
             }
+
+            &:disabled {
+                background-color: #c2b48a;
+                cursor: not-allowed;
+                transform: none;
+            }
+        }
+
+        .form-success {
+            margin-top: -5px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background-color: #e8f5e9;
+            border: 1px solid #a5d6a7;
+            color: #2e7d32;
+            font-size: 14px;
+        }
+
+        .form-error {
+            margin-top: -5px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background-color: #fdecea;
+            border: 1px solid #f5c6c2;
+            color: #c62828;
+            font-size: 14px;
         }
     }
 }
