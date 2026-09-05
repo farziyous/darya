@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Home } from './pages/home/Home'
 import { Products } from './pages/products/Products'
+import { Product } from './pages/product/Product'
+import { ContactUs } from './pages/contact-us/ContactUs'
 import { NotFound } from './pages/notFound/NotFound'
 import './App.css'
 
@@ -52,6 +54,8 @@ function App() {
     <Routes>
       <Route index element={<Home products={products} categories={categories} />} />
       <Route path='products/' element={<Products products={products} categories={categories} />} />
+      <Route path='product' element={<Product />} />
+      <Route path='contact-us' element={<ContactUs />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
   )

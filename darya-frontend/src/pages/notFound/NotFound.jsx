@@ -5,6 +5,7 @@ import './NotFound.css'
 export const NotFound = () => {
     return (
         <>
+            <title>کفش دریا</title>
             <Header />
 
             <div className="not-found-page-container">

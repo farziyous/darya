@@ -39,7 +39,7 @@ export const Home = ({ products, categories }) => {
                         ))}
                     </div>
                 </div>
-                <div className="product-swiper">
+                <div className="products-swiper">
                     <h1>محبوب ترین ها</h1>
                     <SwiperCom categories={categories} />
                 </div>

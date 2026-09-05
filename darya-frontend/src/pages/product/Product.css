@@ -1,0 +1,161 @@
+.product-container-page {
+    margin-top: 130px;
+    padding: 0px 3%;
+
+    .back-button {
+        padding: 6px 13px;
+        background: #F5EFE0;
+        cursor: pointer;
+        border-radius: 999px;
+        color: #8A6D1E;
+        border: #8A6D1E 2px solid;
+        transition: 0.3s;
+        font-size: 18px;
+
+        &:hover,
+        &:focus-visible {
+            background-color: #8A6D1E;
+            color: #F5EFE0;
+        }
+    }
+
+    .product-container {
+        display: flex;
+        width: 100%;
+        gap: 5%;
+        margin-top: 20px;
+
+        .product-info {
+            background-color: #FDFBF7;
+            height: fit-content;
+            width: 50%;
+            border: 1px solid #E8DCC0;
+            border-radius: 16px;
+            padding: 28px 32px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .product-title {
+                margin: 0;
+                color: #1A1A1A;
+                font-size: 1.8rem;
+                line-height: 1.4;
+                font-weight: 700;
+                border-bottom: 2px solid #E8DCC0;
+                padding-bottom: 14px;
+            }
+
+            .product-des {
+                margin: 0;
+                color: #7A7268;
+                font-size: 1rem;
+                line-height: 1.9;
+            }
+
+            .contact-us-link {
+                margin-top: auto;
+                align-self: flex-start;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background-color: #8A6D1E;
+                color: #FFFFFF;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 0.95rem;
+                padding: 12px 26px;
+                border-radius: 999px;
+                transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+                box-shadow: 0 2px 8px rgba(201, 162, 39, 0.25);
+
+                &:hover,
+                &:focus-visible {
+                    background-color: #C9A227;
+                    box-shadow: 0 4px 14px rgba(138, 109, 30, 0.35);
+                    transform: translateY(-1px);
+                }
+            }
+        }
+
+        .product-img-container {
+            width: 45%;
+
+            .product-img-wrap {
+                width: 100%;
+                height: 100%;
+                background-color: #E8DCC0;
+                border-radius: 16px;
+            }
+        }
+    }
+
+    @media (max-width: 850px) {
+        padding: 0px 3vw;
+
+        .product-container {
+            flex-direction: column-reverse;
+            gap: 10px;
+
+
+            .product-info {
+                width: auto;
+            }
+
+            .product-img-container {
+                width: auto;
+            }
+        }
+    }
+
+    @media (max-width: 420px) {
+        .product-container {
+
+            .product-info {
+
+                .product-des {
+                    font-size: 15px;
+                }
+
+                .contact-us-link {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+.product-swiper .swiper-pagination-bullet {
+    background-color: #f5efe0;
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+}
+ 
+.product-swiper .swiper-pagination-bullet-active {
+    background-color: #C9A227;
+}
+
+.product-swiper .swiper-button-next,
+.product-swiper .swiper-button-prev {
+    width: 34px;
+    height: 34px;
+    background-color: rgba(253, 251, 247, 0.85);
+    border-radius: 10%;
+    color: #8A6D1E;
+    box-shadow: 0 2px 8px rgba(26, 26, 26, 0.15);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.product-swiper .swiper-button-next:hover,
+.product-swiper .swiper-button-prev:hover {
+    background-color: #C9A227;
+    color: #FFFFFF;
+}
+
+.product-swiper .swiper-button-next::after,
+.product-swiper .swiper-button-prev::after {
+    font-size: 14px;
+    font-weight: 700;
+}

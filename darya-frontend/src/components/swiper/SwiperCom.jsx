@@ -95,7 +95,7 @@ export function SwiperCom({ categories }) {
                     },
                 }}
                 modules={[Autoplay]}
-                className="product-swiper"
+                className="products-swiper"
             >
                 {
                     categories.map((category) =>
