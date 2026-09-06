@@ -83,6 +83,24 @@
         }
     }
 
+    .new-blogs-container {
+        margin-top: 60px;
+
+        h1 {
+            text-align: center;
+            color: #8A6D1E;
+            font-size: 50px;
+        }
+
+        .new-blogs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 28px;
+            margin-top: 40px;
+        }
+    }
+
     @media (max-width: 1200px) {
         .swiper-container {
             margin-top: 50px;
@@ -139,6 +157,13 @@
         }
 
         .products-swiper {
+
+            h1 {
+                font-size: 40px;
+            }
+        }
+
+        .new-blogs-container {
 
             h1 {
                 font-size: 40px;

@@ -1,8 +1,9 @@
 import { Link } from 'react-router'
 import { Header } from '../../components/header/Header'
-import { Footer } from '../../components/footer/Footer' 
+import { Footer } from '../../components/footer/Footer'
 import { SwiperCom } from '../../components/swiper/SwiperCom'
 import { ProductCard } from '../../components/product/ProductCard'
+import { BlogCard } from '../../components/blog/BlogCard'
 import './Home.css'
 import mainBanner from '../../assets/banners/darya-shoes-banner.webp'
 import mainBannerMobile from '../../assets/banners/darya-shoes-banner-mobile.webp'
@@ -11,7 +12,7 @@ import womenSandal from '../../assets/banners/women-sandal-category.webp'
 import plastic from '../../assets/banners/plastic-category.webp'
 import katoni from '../../assets/banners/katoni.webp'
 
-export const Home = ({ products, categories }) => {
+export const Home = ({ products, categories, blogs }) => {
     return (
         <>
             <title>کفش دریا</title>
@@ -42,6 +43,14 @@ export const Home = ({ products, categories }) => {
                 <div className="products-swiper">
                     <h1>محبوب ترین ها</h1>
                     <SwiperCom categories={categories} />
+                </div>
+                <div className="new-blogs-container">
+                    <h1>جدیدترین مقاله ها</h1>
+                    <div className="new-blogs">
+                        {blogs.slice(0, 3).map((blog) => (
+                            <BlogCard key={blog.id} blog={blog} />
+                        ))}
+                    </div>
                 </div>
             </div>
 

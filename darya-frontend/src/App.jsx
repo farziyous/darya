@@ -5,6 +5,7 @@ import { Home } from './pages/home/Home'
 import { Products } from './pages/products/Products'
 import { Product } from './pages/product/Product'
 import { ContactUs } from './pages/contact-us/ContactUs'
+import { Blogs } from './pages/blogs/Blogs'
 import { NotFound } from './pages/notFound/NotFound'
 import './App.css'
 
@@ -13,6 +14,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000
 function App() {
   const [products, setProducts] = useState([])
   const [categories, setCategories] = useState([])
+  const [blogs, setBlogs] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
@@ -22,12 +24,14 @@ function App() {
     const loadInitialData = async () => {
       try {
         setLoading(true)
-        const [productRes, categoriesRes] = await Promise.all([
+        const [productRes, categoriesRes, blogsRes] = await Promise.all([
           axios.get(`${API_BASE_URL}/api/products/`, { signal: controller.signal }),
-          axios.get(`${API_BASE_URL}/api/categories/`, { signal: controller.signal })
+          axios.get(`${API_BASE_URL}/api/categories/`, { signal: controller.signal }),
+          axios.get(`${API_BASE_URL}/api/blogs/`, { signal: controller.signal }),
         ])
         setProducts(productRes.data.results)
         setCategories(categoriesRes.data)
+        setBlogs(blogsRes.data)
       } catch (err) {
         if (!axios.isCancel(err)) {
           setError(err)
@@ -52,10 +56,11 @@ function App() {
 
   return (
     <Routes>
-      <Route index element={<Home products={products} categories={categories} />} />
-      <Route path='products/' element={<Products products={products} categories={categories} />} />
+      <Route index element={<Home products={products} categories={categories} blogs={blogs} />} />
+      <Route path='products' element={<Products products={products} categories={categories} />} />
       <Route path='product' element={<Product />} />
       <Route path='contact-us' element={<ContactUs />} />
+      <Route path='blogs' element={<Blogs blogs={blogs} />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
   )
