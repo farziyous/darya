@@ -6,6 +6,7 @@ import { Products } from './pages/products/Products'
 import { Product } from './pages/product/Product'
 import { ContactUs } from './pages/contact-us/ContactUs'
 import { Blogs } from './pages/blogs/Blogs'
+import { Blog } from './pages/blog/Blog'
 import { NotFound } from './pages/notFound/NotFound'
 import './App.css'
 
@@ -61,6 +62,7 @@ function App() {
       <Route path='product' element={<Product />} />
       <Route path='contact-us' element={<ContactUs />} />
       <Route path='blogs' element={<Blogs blogs={blogs} />} />
+      <Route path='blog' element={<Blog />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
   )

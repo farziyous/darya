@@ -78,7 +78,7 @@ export const Products = ({ categories }) => {
     if (error) {
         return (
             <>
-                <Header categories={categories} />
+                <Header />
                 <div className="products-error">مشکلی پیش امده است لطفا بعدا تلاش کنید</div>
                 <Footer />
             </>
@@ -91,7 +91,7 @@ export const Products = ({ categories }) => {
         <>
             <title>محصولات پازین</title>
 
-            <Header categories={categories} />
+            <Header />
             <div className="products-container">
                 <h1 className="product-page-title">{pageTitle}</h1>
                 {(search) ? '' :

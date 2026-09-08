@@ -18,7 +18,7 @@ class MainProductSerializer(serializers.ModelSerializer):
     images = ImageSerializer(many=True, read_only=True)
     category = MinimalCategorySerializer(read_only=True)
     default_image = ImageSerializer(read_only=True)
-    
+
     class Meta:
         model = Product
         fields = '__all__'
@@ -43,7 +43,7 @@ class FeaturedProductSerializer(serializers.ModelSerializer):
 class CategorySerializer(serializers.ModelSerializer):
     featured_product = FeaturedProductSerializer(read_only=True)
     products = serializers.SerializerMethodField()
-    
+
     class Meta:
         model = Category
         fields = '__all__'
@@ -55,4 +55,4 @@ class CategorySerializer(serializers.ModelSerializer):
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
-        fields = '__all__'  
+        fields = '__all__'

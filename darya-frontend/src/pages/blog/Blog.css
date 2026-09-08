@@ -1,0 +1,227 @@
+.container-blog-page {
+    background: #F5EFE0;
+    color: #1A1A1A;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 5rem;
+    box-sizing: border-box;
+    margin-top: 100px;
+}
+
+.container-blog-page * {
+    box-sizing: border-box;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #8A6D1E;
+    border: #8A6D1E 2px solid;
+    border: 1px solid;
+    border-radius: 999px;
+    padding: 0.5rem 1.25rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    background: #F5EFE0;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.back-button::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #C9A227;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #8A6D1E;
+    color: #F5EFE0;
+}
+
+.back-button:hover::before {
+    transform: scale(1.4);
+}
+
+.back-button:focus-visible {
+    outline: 2px solid #C9A227;
+    outline-offset: 3px;
+}
+
+.blog-title {
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.35;
+    color: #1A1A1A;
+    margin: 0 0 1.5rem;
+}
+
+.blog-title::after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin-top: 1.25rem;
+    background: linear-gradient(to left, #C9A227, transparent);
+    border-radius: 2px;
+}
+
+.blog-text {
+    background: #FDFBF7;
+    border: 1px solid #E8DCC0;
+    border-radius: 6px;
+    padding: 2.5rem clamp(1.25rem, 4vw, 3rem);
+}
+
+.blog-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #E8DCC0;
+    margin-bottom: 2rem;
+}
+
+.blog-text h1,
+.blog-text h2,
+.blog-text h3,
+.blog-text h4 {
+    font-weight: 600;
+    color: #1A1A1A;
+    line-height: 1.5;
+    margin: 2.25rem 0 1rem;
+}
+
+.blog-text h1:first-child,
+.blog-text h2:first-child,
+.blog-text h3:first-child {
+    margin-top: 0;
+}
+
+.blog-text h1 {
+    font-size: 1.7rem;
+}
+
+.blog-text h2 {
+    font-size: 1.4rem;
+}
+
+.blog-text h3 {
+    font-size: 1.2rem;
+}
+
+.blog-text p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #1A1A1A;
+    margin: 0 0 1.4rem;
+}
+
+.blog-text a {
+    color: #8A6D1E;
+    text-decoration: underline;
+    text-decoration-color: #E8DCC0;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.blog-text a:hover {
+    color: #8A6D1E;
+    text-decoration-color: #8A6D1E;
+}
+
+.blog-text strong {
+    font-weight: 600;
+    color: #1A1A1A;
+}
+
+.blog-text ul,
+.blog-text ol {
+    margin: 0 0 1.4rem;
+    padding-inline-start: 1.5rem;
+    line-height: 1.9;
+    font-size: 1.05rem;
+}
+
+.blog-text li {
+    margin-bottom: 0.5rem;
+}
+
+.blog-text blockquote {
+    margin: 1.75rem 0;
+    padding: 0.25rem 1.5rem;
+    border-inline-start: 3px solid #C9A227;
+    color: #7A7268;
+    font-style: normal;
+}
+
+.blog-text blockquote p {
+    margin-bottom: 0.5rem;
+}
+
+.blog-text hr {
+    border: none;
+    border-top: 1px solid #E8DCC0;
+    margin: 2.5rem 0;
+}
+
+.blog-text code {
+    background: #E8DCC0;
+    color: #1A1A1A;
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.blog-text pre {
+    background: #1A1A1A;
+    color: #FDFBF7;
+    padding: 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    text-align: left;
+    margin: 0 0 1.4rem;
+}
+
+.blog-text pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+}
+
+.blog-text img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+}
+
+
+@media (max-width: 640px) {
+    .container-blog-page {
+        padding: 2.5rem 1.25rem 3.5rem;
+    }
+
+    .blog-text {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .blog-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .back-button,
+    .back-button::before,
+    .blog-text a {
+        transition: none;
+    }
+}

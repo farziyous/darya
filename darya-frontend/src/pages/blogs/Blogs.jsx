@@ -3,23 +3,13 @@ import { Footer } from "../../components/footer/Footer"
 import { BlogCard } from "../../components/blog/BlogCard"
 import './Blogs.css'
 
-export const Blogs = ({ categories, blogs, loading }) => {
-
-    if (loading) {
-        return (
-            <>
-                <Header categories={categories} />
-                <div className="loading-blogs">در حال بارگذاری...</div>
-                <Footer />
-            </>
-        )
-    }
+export const Blogs = ({ blogs }) => {
 
     return (
         <>
             <title>وبلاگ</title>
 
-            <Header categories={categories} />
+            <Header />
             <div className="blogs-page-contianter">
                 <h1 className='blogs-title'>وبلاگ و مقاله ها</h1>
                 {blogs.length === 0 ? (

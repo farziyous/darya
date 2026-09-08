@@ -12,11 +12,11 @@ export const Footer = () => {
                 </div>
                 <div className='left'>
 
-                    <a className='social-link'>
-                        <img src={telegramLogo} alt="تلگرام دریا" />
+                    <a className='social-link' href='https://t.me/daryashoe' target='_blank'>
+                        <img src={telegramLogo} alt="تلگرام کفش دریا" />
                     </a>
-                    <a className='social-link'>
-                        <img src={rubikaLogo} alt="روبیکا دریا" />
+                    <a className='social-link' href='https://web.rubika.ir/#c=c0Bj8ua04f986026c77abb920c25e0e4' target='_blank'>
+                        <img src={rubikaLogo} alt="روبیکا کفش دریا" />
                     </a>
                 </div>
             </div>

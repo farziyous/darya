@@ -12,7 +12,10 @@ class ProductPagination(PageNumberPagination):
 
 
 class ProductViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Product.objects.select_related('category').prefetch_related('images').all().order_by('-id')
+    queryset = Product.objects.select_related('category').prefetch_related(
+        'images',
+        Prefetch('images', queryset=Image.objects.filter(is_default=True), to_attr='default_image_list'),
+    ).all().order_by('-id')
     serializer_class = MainProductSerializer
     lookup_field = 'slug'
     pagination_class = ProductPagination

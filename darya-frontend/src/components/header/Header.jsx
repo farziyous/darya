@@ -51,7 +51,7 @@ export const Header = () => {
                 <div className='navigation'>
                     <NavLink to='/products'>محصولات</NavLink>
                     <NavLink to='/contact-us'>ارتباط با ما</NavLink>
-                    <NavLink to=''>وبلاگ</NavLink>
+                    <NavLink to='/blogs'>وبلاگ</NavLink>
                 </div>
                 <div className='search-input'>
                     <input
@@ -90,7 +90,7 @@ export const Header = () => {
                 <div className='navigation'>
                     <NavLink to='/products'>محصولات</NavLink>
                     <NavLink to='/contact-us'>ارتباط با ما</NavLink>
-                    <NavLink to=''>وبلاگ</NavLink>
+                    <NavLink to='/blogs'>وبلاگ</NavLink>
                 </div>
                 <div className='navigation-mobile'>
                     <div className={`drop-down-svg ${isMenuOpen ? 'open' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -99,7 +99,7 @@ export const Header = () => {
                     <div className={`links ${isMenuOpen ? 'open' : ''}`}>
                         <NavLink to='/products' onClick={() => setIsMenuOpen(false)}>محصولات</NavLink>
                         <NavLink to='/contact-us' onClick={() => setIsMenuOpen(false)}>ارتباط با ما</NavLink>
-                        <NavLink to='' onClick={() => setIsMenuOpen(false)}>وبلاگ</NavLink>
+                        <NavLink to='/blogs' onClick={() => setIsMenuOpen(false)}>وبلاگ</NavLink>
                     </div>
                 </div>
             </div>
