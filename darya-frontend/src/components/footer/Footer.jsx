@@ -7,8 +7,9 @@ export const Footer = () => {
         <div className='footer-container'>
             <div className='top'>
                 <div className='right'>
-                    <p>شماره تماس: <span>09198989765</span></p>
-                    <p>آدرس: <span>فعلا نمیدونم ایشلا بعدا به یه نتیجه مطلوب می رسم حالا بتز دقیق معلوم نی یا تبلات</span></p>
+                    <p>شماره تماس: <span>09193523159</span></p>
+                    <p>شماره دفتر شرکت: <span>02537228484</span></p>
+                    <p>آدرس: <span>قم بلوار خلیج فارس کوچه بیست و یک (استخر دریا) انتهای کوچه کفش دریا</span></p>
                 </div>
                 <div className='left'>
 
