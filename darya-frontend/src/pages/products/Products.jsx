@@ -90,6 +90,7 @@ export const Products = ({ categories }) => {
     return (
         <>
             <title>محصولات پازین</title>
+            <meta name="description" content={search ? `نتایج جستجو برای ${search} در فروشگاه کفش دریا` : `مشاهده و خرید ${activeCategory ? activeCategory.title : 'تمام محصولات'} کفش دریا`} />
 
             <Header />
             <div className="products-container">

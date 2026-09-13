@@ -80,7 +80,9 @@ export const Product = () => {
 
     return (
         <>
+
             <title>{`محصول ${product.title}`}</title>
+            <meta name="description" content={product.description ? product.description.slice(0, 160) : `خرید ${product.title} از فروشگاه کفش دریا`} />
 
             <Header />
             <div className="product-container-page">

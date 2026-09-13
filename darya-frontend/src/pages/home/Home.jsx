@@ -16,6 +16,8 @@ export const Home = ({ products, categories, blogs }) => {
     return (
         <>
             <title>کفش دریا</title>
+            <meta name="description" content="فروشگاه آنلاین کفش دریا - صندل، پلاستیکی، کتونی مردانه و زنانه با کیفیت بالا و قیمت مناسب. خرید آنلاین انواع کفش و صندل." />
+            
             <Header />
 
             <div className="home-container">

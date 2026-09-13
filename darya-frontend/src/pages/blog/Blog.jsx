@@ -60,8 +60,9 @@ export const Blog = () => {
     return (
         <>
             <title>{blog.title}</title>
+            <meta name="description" content={blog.content ? blog.content.replace(/[#*_`\[\]]/g, '').slice(0, 160) : blog.title} />
 
-            <Header/>
+            <Header />
             <div className="container-blog-page">
                 <button type="button" className="back-button" onClick={handleBack}>
                     بازگشت
