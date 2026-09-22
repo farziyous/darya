@@ -89,7 +89,7 @@ export const Products = ({ categories }) => {
 
     return (
         <>
-            <title>{activeCategory ? `${activeCategory.title} | کفش دریا` : search ? `نتایج جستجو برای ${search} | کفش دریا` : 'محصولات | خرید کفش و صندل | کفش دریا'}</title>
+            <title>{activeCategory ? `${activeCategory.title} | کفش دریا` : search ? `نتایج جستجو برای ${search} | کفش دریا` : 'محصولات | کفش و صندل | کفش دریا'}</title>
             <meta name="description" content={search ? `نتایج جستجو برای ${search} در فروشگاه کفش دریا` : `مشاهده و خرید ${activeCategory ? activeCategory.title : 'تمام محصولات'} کفش دریا`} />
 
             <Header />
