@@ -64,7 +64,7 @@ export const ContactUs = () => {
 
     return (
         <>
-            <title>ارتباط با ما</title>
+            <title>ارتباط با ما | کفش دریا</title>
             <meta name="description" content="تماس با فروشگاه کفش دریا - برای سوالات، سفارشات و مشاوره خرید با ما در ارتباط باشید." />
 
             <Header />

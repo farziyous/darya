@@ -7,7 +7,7 @@ export const Blogs = ({ blogs }) => {
 
     return (
         <>
-            <title>وبلاگ</title>
+            <title>وبلاگ و مقالات کفش | کفش دریا</title>
             <meta name="description" content="مقالات و راهنمای خرید کفش از وبلاگ فروشگاه کفش دریا - نکات مفید درباره انواع کفش و صندل." />
 
             <Header />

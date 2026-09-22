@@ -15,7 +15,7 @@ import katoni from '../../assets/banners/katoni.webp'
 export const Home = ({ products, categories, blogs }) => {
     return (
         <>
-            <title>کفش دریا</title>
+            <title>کفش دریا | کفش، صندل و کتونی مردانه و زنانه</title>
             <meta name="description" content="فروشگاه آنلاین کفش دریا - صندل، پلاستیکی، کتونی مردانه و زنانه با کیفیت بالا و قیمت مناسب. خرید آنلاین انواع کفش و صندل." />
             
             <Header />
